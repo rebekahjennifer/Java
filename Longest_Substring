@@ -1,0 +1,36 @@
+package sampletest;
+
+import java.util.HashSet;
+
+public class MyClass{
+	public static int longestSubstring(String s) {
+		int p_pointer = 0; 
+		int q_pointer = 0;
+		int max = 0;
+		
+		HashSet<Character> hash_set = new HashSet();
+		
+		while(q_pointer < s.length()) {
+			if(!hash_set.contains(s.charAt(q_pointer))) {
+				hash_set.add(s.charAt(q_pointer));
+				q_pointer++;
+				max = Math.max(hash_set.size(), max);
+			}else
+			{
+				hash_set.remove(s.charAt(p_pointer));
+				p_pointer++;
+				
+			}
+		}
+		return max;
+	}
+		public static void main(String[] args)  
+	{
+		String s = "geeksforgeeks";
+		int len = longestSubstring(s);
+		System.out.println("The length of "
+                + "the longest non repeating character is " + len); 
+	} 
+	
+	
+}
