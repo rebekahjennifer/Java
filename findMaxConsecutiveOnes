@@ -1,0 +1,30 @@
+package sampletest;
+
+class Sample1 {
+	public int findMaxConsecutiveOnes(int[] nums) {
+		int count = 0;
+		int result = 0;
+		for(int i = 0; i<nums.length; i++) {
+			if(nums[i] == 0) {
+				count = 0;}
+			else {
+				count ++;
+				result = Math.max(result, count);}
+			
+			
+		}
+		return result;
+		
+        
+    }
+	public static void main(String[] args) {
+		int[] nums = {1, 1, 0, 1, 1, 1};
+		Sample1 A = new Sample1();
+		//A.findMaxConsecutiveOnes(nums);
+		System.out.println("Maximum Consecutive Ones are " + A.findMaxConsecutiveOnes(nums));
+		
+		
+		
+	}
+
+}
