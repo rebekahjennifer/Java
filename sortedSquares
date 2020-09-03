@@ -1,0 +1,33 @@
+package sampletest;
+import java.util.Arrays;
+
+class Sample1 {
+	public int[] sortedSquares(int[] B) {
+		for(int i = 0; i<B.length; i++) 
+		//B[i] = (int)Math.pow(B[i], 2);
+			B[i] = B[i] * B[i];
+		Arrays.sort(B);
+		
+		
+		Arrays.toString(B);
+		return B;
+        
+    }
+        
+    
+	public static void main(String[] args) {
+		int[] B= {-4, -1, 0, 3, 10};
+		
+		Sample1 A = new Sample1();
+		//A.sortedSquares(B);
+		
+		System.out.println(A.sortedSquares(B));
+		for( int Bs : B)
+		System.out.println("Sorted Squares are " + Bs );
+		
+		
+		
+		
+	}
+
+}
